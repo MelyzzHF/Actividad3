@@ -3,6 +3,7 @@ package app;
 import java.io.IOException;
 import java.util.Scanner;
 import app.scr.Fibonacci;
+import app.scr.SubsetSum;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -24,6 +25,9 @@ public class Main {
                 case 1: 
                     Fibonacci.mostrarFibonacci(sc);
                     break;
+
+                case 2:
+                    SubsetSum.mostrarSubSet(sc);
 
                 case 0:
                     System.out.println("Saliendo...");

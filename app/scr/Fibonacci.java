@@ -19,6 +19,10 @@ public class Fibonacci {
 
         return fibonacci(n - 1) + fibonacci(n - 2); // Caso recursivo
     }
+    /**
+     * Función que sirve para pedirle el número y mostrar el resultado
+     * @param sc sirve para aceptar el número dado
+     */
 
     public static void mostrarFibonacci(Scanner sc) {
         System.out.println("Calcular Fibonacci de: ");
