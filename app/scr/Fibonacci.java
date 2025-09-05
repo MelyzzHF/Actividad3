@@ -1,5 +1,10 @@
 package app.scr;
 
+/** * Autor: Melissa Yaretzi Hernández Flores
+ * * Fecha: 04/09/2025 
+ * * Descripción: La clase Fibonacci sirve para realizar las operaciones pero de manera recursiva
+ * 
+ * **/
 import java.util.Scanner;
 
 public class Fibonacci {
@@ -19,20 +24,36 @@ public class Fibonacci {
 
         return fibonacci(n - 1) + fibonacci(n - 2); // Caso recursivo
     }
+
     /**
-     * Función que sirve para pedirle el número y mostrar el resultado
+     * Función que sirve para pedirle el número y mostrar el resultado, si ingresa una letra o un numero negativo, vuelve a preguntar
+     
+     * 
      * @param sc sirve para aceptar el número dado
      */
-
     public static void mostrarFibonacci(Scanner sc) {
-        System.out.println("Calcular Fibonacci de: ");
-        int n = sc.nextInt();
-        if (n < 0) {
-            System.out.println("Inválido. Debe ser un entero no negativo.");
-            return;
-        }
-        System.out.println("\nFibonacci de " + n + " : " + fibonacci(n));
+        int n = -1;
 
+        while (true) {
+            System.out.print("Calcular Fibonacci de: ");
+
+            if (!sc.hasNextInt()) { 
+                System.out.println("Inválido. Debes ingresar un número entero no negativo.");
+                sc.next(); 
+                continue; 
+            }
+
+            n = sc.nextInt();
+
+            if (n < 0) {
+                System.out.println("Inválido. Debe ser un entero no negativo.");
+                continue;
+            }
+
+            break; 
+        }
+
+        System.out.println("\nFibonacci de " + n + " : " + fibonacci(n));
     }
 
 }
